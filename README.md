@@ -1,4 +1,4 @@
-# prebot-rose-ap
+# prebots-rose-ap
 ### ROSE-AP supporting the management of robot program definitions that can be instantiated for different robot vendors and a management system for working with them.
 
 ## Use case description
