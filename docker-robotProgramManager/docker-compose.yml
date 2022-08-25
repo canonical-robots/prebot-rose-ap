@@ -1,0 +1,49 @@
+version: "3.4"
+
+services:
+  prebotsmanager:
+    image: canonicalrobots/robotprogrammanager:v1.0
+    hostname: prebotsmanager
+    container_name: canonicalrobots-robotProgramManager
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - ROBOT_IP=192.168.0.10
+    ports:
+      - "81:80"    
+    volumes:     
+      - web_data
+    networks:
+      - default
+
+  robotpostprocessorservice:
+    image: canonicalrobots/robotpostprocessorservice:v1.0
+    hostname: postProcessorElfin5
+    container_name: canonicalrobots-robotPostProcessor-Elfin5
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - ROBOT_IP=192.168.0.10
+    ports:
+      - "80"     
+    volumes:     
+      - web_data
+    networks:
+      - default
+
+
+  robotcommunicationservice:
+    image: canonicalrobots/robotcommunicationservice:v1.0
+    hostname: communicationServiceElfin5
+    container_name: canonicalrobots-robotCommunicationService-Elfin5
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development     
+      - ROBOT_IP=192.168.0.10
+    ports:
+      - "80"        
+    networks:
+      - default
+
+
+volumes:
+   web_data:
