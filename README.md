@@ -14,6 +14,9 @@ This project is part of [DIH^2](http://www.dih-squared.eu/). For more informatio
 
 -   [Background](#background)
 -   [Install](#install)
+-   [Architecture](#architecture)
+-   [Contributing](#contributing)
+-   [License](#license)
 
 ## Background
 This ROSE-AP is an IoT application for defining, building, and managing robot programs.
@@ -34,3 +37,21 @@ The **use case description** exposed below better conveys an idea of the ROSE-AP
 Information about how to install the IoT **Robot Program Manager** can be found at the corresponding section of the
 [Installation Guide](docs/robotProgramManagerInstallationGuide.md). 
 
+## Architecture
+
+A description of the architecture can be found in the [Architecture documentation](docs/architecture.md)
+
+## Usage
+
+How to use the component
+
+Information about how to use the agnet can be found in the [User Manual](docs/usermanual.md).
+
+## Contributing
+
+If you'd like to contribute, start by searching through the issues and pull requests to see whether someone else has raised a similar idea or question.
+Before contributing, please check out [Contribution guidelines](docs/contribution.md).
+
+## License
+
+[Apache2.0](LICENSE) © 2022
