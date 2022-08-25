@@ -1,6 +1,10 @@
 # prebot-rose-ap
 ### ROSE-AP supporting the management of robot program definitions that can be instantiated for different robot vendors and a management system for working with them.
 
+[![License: Apache](https://img.shields.io/github/license/saltstack/salt)](https://www.apache.org/licenses/LICENSE-2.0.html#redistribution)
+
+| :whale:  [DockerHub](https://hub.docker.com/u/ittipl) |
+
 ## Use case description
 1. Using a cad designer a **program_definition** is generated. This **program_definition** is a JSON document that describes a robot program defining a series of trajectories that the robot is going to follow using a specific tool and velocity.
 2. The **lamination_definition** is sent to the **Management System**.
