@@ -19,8 +19,8 @@ This project is part of [DIH^2](http://www.dih-squared.eu/). For more informatio
 -   [License](#license)
 
 ## Background
-This ROSE-AP is an IoT application for defining, building, and managing robot programs.
-The **use case description** exposed below better conveys an idea of the ROSE-AP main features.
+This **ROSE-AP** is an IoT application for defining, building, and managing robot programs.
+The **use case description** exposed below better conveys an idea of the **ROSE-AP** main features.
 
 ### Use case description
 1. Using a cad designer a **program_definition** is generated. This **program_definition** is a JSON document that describes a robot program defining a series of trajectories that the robot is going to follow using a specific tool and velocity.
