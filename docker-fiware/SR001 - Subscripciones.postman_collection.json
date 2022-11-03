@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "d68f97d4-0ecb-4270-9ac8-1601aee933f3",
+		"name": "SR001 - Subscripciones",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20584302"
+	},
+	"item": [
+		{
+			"name": "Cygnus - Subscription - ProductionData",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "fiware-service",
+						"value": "production_data"
+					},
+					{
+						"key": "fiware-servicepath",
+						"value": "/"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"description\": \"Notify Cygnus of all context changes\",\n  \"subject\": {\n    \"entities\": [\n      {\n        \"idPattern\": \".*\"\n      }\n    ]\n  },\n  \"notification\": {\n    \"http\": {\n      \"url\": \"http://cygnus:5050/notify\"\n    }\n  },\n  \"throttling\": 5\n}"
+				},
+				"url": {
+					"raw": "http://localhost:1026/v2/subscriptions/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"subscriptions",
+						""
+					]
+				},
+				"description": "The rate of change of the **Motion Sensor** is driven by events in the real-world. We need to receive\nevery event to be able to aggregate the results.\n\nThis is done by making a POST request to the `/v2/subscription` endpoint of the Orion Context Broker.\n\n* The `fiware-service` and `fiware-servicepath` headers are used to filter the subscription to only listen to measurements from the attached IoT Sensors\n* The `idPattern` in the request body ensures that **Quantum Leap** will be informed of all **Motion Sensor** data changes.\n* The notification `url` must match the exposed port.\n\nThe `metadata` attribute ensures that the `time_index` column within the Crate-DB database will match the data found within the **Orion Context Broker** rather than using the creation time of the record within the Crate-DB itself."
+			},
+			"response": []
+		},
+		{
+			"name": "Cygnus - Subscription - ProductionErrorData",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "fiware-service",
+						"value": "production_error_data"
+					},
+					{
+						"key": "fiware-servicepath",
+						"value": "/"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"description\": \"Notify Cygnus of all context changes\",\n  \"subject\": {\n    \"entities\": [\n      {\n        \"idPattern\": \".*\"\n      }\n    ]\n  },\n  \"notification\": {\n    \"http\": {\n      \"url\": \"http://cygnus:5050/notify\"\n    }\n  },\n  \"throttling\": 5\n}"
+				},
+				"url": {
+					"raw": "http://localhost:1026/v2/subscriptions/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"subscriptions",
+						""
+					]
+				},
+				"description": "The rate of change of the **Motion Sensor** is driven by events in the real-world. We need to receive\nevery event to be able to aggregate the results.\n\nThis is done by making a POST request to the `/v2/subscription` endpoint of the Orion Context Broker.\n\n* The `fiware-service` and `fiware-servicepath` headers are used to filter the subscription to only listen to measurements from the attached IoT Sensors\n* The `idPattern` in the request body ensures that **Quantum Leap** will be informed of all **Motion Sensor** data changes.\n* The notification `url` must match the exposed port.\n\nThe `metadata` attribute ensures that the `time_index` column within the Crate-DB database will match the data found within the **Orion Context Broker** rather than using the creation time of the record within the Crate-DB itself."
+			},
+			"response": []
+		},
+		{
+			"name": "Cygnus - Subscription - Programas",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "fiware-service",
+						"value": "",
+						"disabled": true
+					},
+					{
+						"key": "fiware-servicepath",
+						"value": "/",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"description\": \"Notify Cygnus of all context changes\",\n  \"subject\": {\n    \"entities\": [\n      {\n        \"idPattern\": \".*\"\n      }\n    ]\n  },\n  \"notification\": {\n    \"http\": {\n      \"url\": \"http://cygnus:5050/notify\"\n    }\n  },\n  \"throttling\": 5\n}"
+				},
+				"url": {
+					"raw": "http://localhost:1026/v2/subscriptions/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"subscriptions",
+						""
+					]
+				},
+				"description": "The rate of change of the **Motion Sensor** is driven by events in the real-world. We need to receive\nevery event to be able to aggregate the results.\n\nThis is done by making a POST request to the `/v2/subscription` endpoint of the Orion Context Broker.\n\n* The `fiware-service` and `fiware-servicepath` headers are used to filter the subscription to only listen to measurements from the attached IoT Sensors\n* The `idPattern` in the request body ensures that **Quantum Leap** will be informed of all **Motion Sensor** data changes.\n* The notification `url` must match the exposed port.\n\nThe `metadata` attribute ensures that the `time_index` column within the Crate-DB database will match the data found within the **Orion Context Broker** rather than using the creation time of the record within the Crate-DB itself."
+			},
+			"response": []
+		}
+	]
+}

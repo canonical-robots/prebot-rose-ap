@@ -1,0 +1,67 @@
+version: "3.5"
+
+services:
+  orion:
+    image: fiware/orion:3.5.1
+    hostname: orion
+    container_name: fiware-orion
+    ports:
+      - "1026:1026"
+    command: -logLevel DEBUG -noCache -dbhost mongo
+    depends_on:
+      - mongo
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://0.0.0.0:1026/version"]
+      interval: 1m
+      timeout: 10s
+      retries: 3
+    networks:
+      - default
+
+
+  mongo:
+    image: mongo:4.4
+    hostname: mongo
+    container_name: mongo
+    expose:
+      - "27017"
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodata:/data
+    networks:
+      - default
+    #command: --bind_ip_all --smallfiles
+
+
+  cygnus:
+    image: fiware/cygnus-ngsi:latest
+    hostname: cygnus
+    container_name: fiware-cygnus
+    depends_on:
+        - mongo
+    networks:
+        - default
+    expose:
+        #- "${CYGNUS_API_PORT}"
+        #- "${CYGNUS_MONGO_SERVICE_PORT}"
+        - "5080"
+        - "5050"
+    ports:
+        - "5050:5050"
+        - "5080:5080"
+    environment:
+        - "CYGNUS_MONGO_HOSTS=mongo:27017"
+        - "CYGNUS_LOG_LEVEL=DEBUG" # The logging level for Cygnus
+        - "CYGNUS_SERVICE_PORT=5050"  # Notification Port that Cygnus listens to for Mongo subscriptions
+        - "CYGNUS_API_PORT=5080" # Port that Cygnus listens on for operational reasons
+        - "CYGNUS_MONGO_SERVICE_PORT=5050"  
+
+
+volumes:
+  mongodata:
+  
+networks:
+    default:
+      driver_opts:
+        com.docker.network.driver.mtu: ${DOCKER_MTU:-1400}
