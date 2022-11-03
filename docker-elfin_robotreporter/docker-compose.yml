@@ -1,0 +1,45 @@
+version: "3.4"
+
+services:
+  
+  elfinreporter:
+    image: canonicalrobots/elfin_robotreporter:v1.0
+    hostname: elfinreporter
+    container_name: canonicalrobots-robotreporter-Elfin5 
+    env_file:
+      - dev.env
+     
+  crateupdater:
+    image: canonicalrobots/crateupdater:v1.0
+    hostname: crateupdater
+    container_name: canonicalrobots-crateupdater   
+    depends_on:
+      - crate-db
+    env_file:
+      - dev.env
+  crate-db:
+    image: crate:4.8.1
+    hostname: crate-db
+    container_name: db-crate
+    ports:
+      # Admin UI
+      - "4200:4200"
+      # Transport protocol
+      - "4300:4300"
+      #ProgressQL para la conexion desde mongo
+      - "5432:5432"
+    command: crate -Cauth.host_based.enabled=false  -Ccluster.name=democluster -Chttp.cors.enabled=true -Chttp.cors.allow-origin="*"
+    environment:
+      - CRATE_HEAP_SIZE=2g
+    volumes:
+      - cratedata:/data
+
+
+volumes:  
+   cratedata:
+   
+networks:
+    default:
+      driver_opts:
+        com.docker.network.driver.mtu: ${DOCKER_MTU:-1400}
+
