@@ -7,43 +7,44 @@ services:
     container_name: canonicalrobots-robotProgramManager
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:80
-      - ROBOT_IP=192.168.0.10
+      - ASPNETCORE_URLS=http://+:80    
     ports:
       - "81:80"    
     volumes:     
       - web_data
     networks:
       - default
+    env_file:
+        - dev.env
 
   robotpostprocessorservice:
-    image: canonicalrobots/robotpostprocessorservice:v1.0
+    image: canonicalrobots/elfin_robotpostprocessorservice:v1.0
     hostname: postProcessorElfin5
     container_name: canonicalrobots-robotPostProcessor-Elfin5
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:80
-      - ROBOT_IP=192.168.0.10
+      - ASPNETCORE_URLS=http://+:80      
     ports:
       - "80"     
     volumes:     
       - web_data
     networks:
       - default
-
+    env_file:
+        - dev.env
 
   robotcommunicationservice:
-    image: canonicalrobots/robotcommunicationservice:v1.0
+    image: canonicalrobots/elfin_robotcommunicationservice:v1.0
     hostname: communicationServiceElfin5
     container_name: canonicalrobots-robotCommunicationService-Elfin5
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development     
-      - ROBOT_IP=192.168.0.10
+      - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - "80"        
     networks:
       - default
-
+    env_file:
+        - dev.env 
 
 volumes:
-   web_data:
+   web_data:  
