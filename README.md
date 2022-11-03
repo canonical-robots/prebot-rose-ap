@@ -35,7 +35,7 @@ The **use case description** exposed below better conveys an idea of the **ROSE-
 ## Install
 
 Information about how to install the IoT **Robot Program Manager** can be found at the corresponding section of the
-[Installation Guide](docs/robotProgramManagerInstallationGuide.md). 
+[Installation Guide](docs/InstallationGuide.md). 
 
 ## Architecture
 
