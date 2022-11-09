@@ -52,7 +52,7 @@ Information about how to use the ROSE-APP can be found in [User & Programmers Ma
 ## Contributing
 
 If you'd like to contribute, start by searching through the issues and pull requests to see whether someone else has raised a similar idea or question.
-Before contributing, please check out [Contribution guidelines](docs/contribution.md).
+Before contributing, please check out [Contribution guidelines](docs/contributing.md).
 
 ## License
 
