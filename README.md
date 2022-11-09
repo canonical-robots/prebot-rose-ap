@@ -3,10 +3,11 @@
 
 [![License: Apache](https://img.shields.io/github/license/saltstack/salt)](https://www.apache.org/licenses/LICENSE-2.0.html#redistribution)
 
-| :whale:  [DockerHub](https://hub.docker.com/u/canonicalrobots) |
-
 This project is part of [DIH^2](http://www.dih-squared.eu/). For more information check the RAMP Catalogue entry for the
 [components](https://github.com/xxx).
+
+| :books: [Documentation](https://roboweldar-rose-ap.readthedocs.io/en/latest/) | :whale: [Docker Hub](https://hub.docker.com/u/canonicalrobots) |
+| --------------------------------------------- | ------------------------------------------------------------- |
 
 
 
@@ -14,6 +15,7 @@ This project is part of [DIH^2](http://www.dih-squared.eu/). For more informatio
 
 -   [Background](#background)
 -   [Install](#install)
+-   [Usage](#usage)
 -   [Architecture](#architecture)
 -   [Contributing](#contributing)
 -   [License](#license)
@@ -37,15 +39,15 @@ The **use case description** exposed below better conveys an idea of the **ROSE-
 Information about how to install the IoT **Robot Program Manager** can be found at the corresponding section of the
 [Installation Guide](docs/InstallationGuide.md). 
 
+Please visit the [step-by-step tutorial](docs/stepbystepguide) to setup a demonstration.
+
 ## Architecture
 
 A description of the architecture can be found in the [Architecture documentation](docs/architecture.md)
 
 ## Usage
 
-How to use the component
-
-Information about how to use the agnet can be found in the [User Manual](docs/usermanual.md).
+Information about how to use the ROSE-APP can be found in [User & Programmers Manual](docs/usermanual.md).
 
 ## Contributing
 
