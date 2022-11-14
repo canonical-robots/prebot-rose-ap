@@ -10,10 +10,10 @@ In order to use the **program manager** the following is required:
 ## Configuration
 ​
 During the installation you can configure the environment variables to configure the application:
- *FIREWARE_SERVER_IP IP of the node running FIWARE and Cygnus
- *FIREWARE_SERVER_PORT=1026 port of the FIWARE
- *ROBOT_IP=127.0.0.1 IP of robot communication port
- *ROBOT_PORT=10003 port of the robot (for some robot models its not needed)
+ * FIREWARE_SERVER_IP IP of the node running FIWARE and Cygnus
+ * FIREWARE_SERVER_PORT=1026 port of the FIWARE
+ * ROBOT_IP=127.0.0.1 IP of robot communication port
+ * ROBOT_PORT=10003 port of the robot (for some robot models its not needed)
 
 ​
 ## Program definition 
@@ -34,7 +34,7 @@ A **program definition** uses the following datatypes with the following specifi
 * **programInput** is the object that stores the information needed for instantiting a robot program executable
   * **robotPose** reference frame of the robot with respect to the global frame
   * **piecePose** reference frame of the piece (or a work frame of reference) with respect to the global frame
-  * ***home** is an optional **Joints** data type that is used as initial and final postion of the robot.
+  * **home** is an optional **Joints** data type that is used as initial and final postion of the robot.
   * **tools** list of tools to be used by the robot, a tool is defined by the two properties: a name and the tcp (tool center point) that is of the Pose type just defined.
   * **layers** array of layers, a layer is an enumeration of trajectories 
     * **trajectory** 
