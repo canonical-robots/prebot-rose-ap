@@ -1,6 +1,7 @@
 ﻿# User & Programmers Manual. 
 ​
 ## Prerequisites
+
 In order to use the **program manager** the following is required:
 ​
 * Follow the installation guide [](doc/InstallationGuide.md)
@@ -108,7 +109,7 @@ Send the program definition entity to the FIWARE Context Broker:
 
 ]
 ```
-### Managing the robot program definition through the **program manager**
+## Managing the robot program definition through the **program manager**
 
  * Open the link http://localhost:81/ on a webwroser
  * The **Robot Program Manager** application should open:
@@ -125,7 +126,7 @@ Send the program definition entity to the FIWARE Context Broker:
    * After the robot program is validated on the robot if the program has had changes it can be uploaded to back to the FIREWARE.
    * Finally we can press on the red label "not validated" to the state "validated" to indicate that this program could safely be deployed for production.
 
-### Robot program entity
+## Robot program entity
 
 Given a program_definition_id we can retrieve from the Orion Context Broker the all the robot programs generated for that program definition:
 
