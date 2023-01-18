@@ -5,7 +5,7 @@
 In order to use the **program manager** the following is required:
 ​
 * Follow the [Installation Guide](InstallationGuide.md)
-* Install **FIWARE** and **Cygnus** microserices
+* Install **FIWARE** and **Cygnus** microservices
 * Install **Robot Program Manager** microservices
 ​
 ## Step 2 - Configuration
