@@ -20,7 +20,7 @@ During the installation check that the **environment variables** are set as foll
 
 A **program definition** is an entity to be stored in the **FIWARE Orion Context Brocker**
 It represents a robot program that is composed of multiple trajectories that could be divided into several layers.
-For a detailed explanation of this entity check the [User & Programmers Manual](docs/usermanual.md)
+For a detailed explanation of this entity check the [User & Programmers Manual](/docs/usermanual.md)
 
 Send the **program definition** entity to the **FIWARE Context Broker**: 
 
