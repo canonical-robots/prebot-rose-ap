@@ -4,25 +4,25 @@
 
 In order to use the **program manager** the following is required:
 ​
-* Follow the installation guide [](doc/InstallationGuide.md)
-* Install FIWARE and cygnus microserices
-* Install robot program manager microservices
+* Follow the [Installation Guide](InstallationGuide.md)
+* Install **FIWARE** and **Cygnus** microserices
+* Install **Robot Program Manager** microservices
 ​
 ## Step 2 - Configuration
 ​
-During the installation check that the environment variables are set as follows:
- * FIREWARE_SERVER_IP IP of the node running FIWARE and Cygnus
- * FIREWARE_SERVER_PORT=1026 port of the FIWARE
- * ROBOT_IP=127.0.0.1 IP of robot communication port
- * ROBOT_PORT=10003 port of the robot 
+During the installation check that the **environment variables** are set as follows:
+ * **FIREWARE_SERVER_IP** IP of the node running FIWARE and Cygnus
+ * **FIREWARE_SERVER_PORT**=1026 port of the FIWARE
+ * **ROBOT_IP**=127.0.0.1 IP of robot
+ * **ROBOT_PORT**=10003 port of the robot 
 
 ## Step 3 - Send a program definition to the FIWARE Orion Context Broker
 
-A **program definition** is an entity to be stored in the FIWARE Orion Context Brocker
+A **program definition** is an entity to be stored in the **FIWARE Orion Context Brocker**
 It represents a robot program that is composed of multiple trajectories that could be divided into several layers.
 For a detailed explanation of this entity check the [User & Programmers Manual](docs/usermanual.md)
 
-Send the **program definition** entity to the FIWARE Context Broker: 
+Send the **program definition** entity to the **FIWARE Context Broker**: 
 
 ```json
 "curl http:127.0.1:1026/v2/entities[
