@@ -6,7 +6,7 @@
 This project is part of [DIH^2](http://www.dih-squared.eu/). For more information check the RAMP Catalogue entry for the
 [components](https://github.com/xxx).
 
-| :books: [Documentation](https://roboweldar-rose-ap.readthedocs.io/en/latest/) | :whale: [Docker Hub](https://hub.docker.com/u/canonicalrobots) |
+| :books: [Documentation](docs/usermanual.md) | :whale: [Docker Hub](https://hub.docker.com/u/canonicalrobots) |
 | --------------------------------------------- | ------------------------------------------------------------- |
 
 
