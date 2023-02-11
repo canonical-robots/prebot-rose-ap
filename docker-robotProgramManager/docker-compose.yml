@@ -15,7 +15,7 @@ services:
     networks:
       - default
     env_file:
-        - dev.env
+      - dev.env
 
   robotpostprocessorservice:
     image: canonicalrobots/elfin_robotpostprocessorservice:v1.0
@@ -31,7 +31,7 @@ services:
     networks:
       - default
     env_file:
-        - dev.env
+       - dev.env
 
   robotcommunicationservice:
     image: canonicalrobots/elfin_robotcommunicationservice:v1.0
