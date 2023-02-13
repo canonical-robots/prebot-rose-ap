@@ -84,7 +84,7 @@ Send the **program definition** entity to the **FIWARE Context Broker**:
 ]
 ```
 
-You can also Open Postman, and import the collection [Program Definitions.postman_collection.json](/docker-robotProgramManager/Program Definitions.postman_collection.json) to send the **program definitions** entities specified in the collection to the **FIWARE Context Broker**
+You can also open **Postman**, and import the collection [Program-Definitions.postman_collection.json](/docker-robotProgramManager/Program-Definitions.postman_collection.json) to send the **program definitions** entities specified in the collection to the **FIWARE Context Broker**
 
 
 ## Step 4 - Manage the robot program definition through the **program manager**
