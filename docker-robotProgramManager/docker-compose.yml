@@ -9,9 +9,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80    
     ports:
-      - "81:80"    
-    volumes:     
-      - web_data
+      - "81:80" 
     networks:
       - default
     env_file:
@@ -26,8 +24,6 @@ services:
       - ASPNETCORE_URLS=http://+:80      
     ports:
       - "80"     
-    volumes:     
-      - web_data
     networks:
       - default
     env_file:
@@ -46,5 +42,4 @@ services:
     env_file:
         - dev.env 
 
-volumes:
-   web_data:  
+ 

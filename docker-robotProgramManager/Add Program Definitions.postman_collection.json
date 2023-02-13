@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "74f7cead-9794-4d86-bec8-803d221162af",
+		"name": "Add Program definitions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6571586"
+	},
+	"item": [
+		{
+			"name": "Get lamination definitions",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Post Program Definitions 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "fiware-service",
+						"value": "production_data",
+						"disabled": true
+					},
+					{
+						"key": "fiware-servicepath",
+						"value": "/",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"id\": \"1fd1d41b-7437-4479-8498-a41e4dff3ccf\",\n      \"type\": \"laminationDefinition\",\n      \"partId\": \"mixed_geometry\",\n      \"comment\": \"lamination carbon fiber\",\n      \"robot\": \"Elfin5\",\n      \"estimatedExecutionTime\": \"65.000\",\n      \"programInput\": {\n        \"partId\": \"mixed_geometry\",\n        \"comment\": \"lamination carbon fiber\",\n        \"robot\": \"Elfin5\",\n        \"home\": [ 0.000, -0.053, -1.610, 0.000, -1.584, 0.000 ],\n        \"robotPose\": [ 0.000, 0.000, 0.000, 0.000, 0.000, 0.000 ],\n        \"piecePose\": [ 0.000, 0.000, 0.000, 0.000, 1.571, 0.000 ],\n        \"tools\": [          \n          {\n            \"name\": \"roller\",\n            \"tcp\": [ -26.597, 59.309, 236.000, -0.008, 0.005, -1.149 ]\n          },\n          {\n            \"name\": \"sphere\",\n            \"tcp\": [ -24.551, 54.747, 236.000, 0.000, 0.000, 0.422 ]\n          }\n        ],\n        \"layers\": [\n          {\n            \"layerNumber\": 1,\n            \"trajectories\": [\n              {\n                \"tool\": \"sphere\",\n                \"pathPoses\": [\n                  [ -442.624, 87.069, 74.161, 2.790, -0.126, -0.034 ],\n                  [ -444.369, 71.777, 31.874, 2.790, -0.126, -0.034 ],                 \n                  [ -626.188, 17.750, 17.514, -2.255, -2.187, 0.000 ],\n                  [ -626.188, 17.750, 30.014, -2.255, -2.187, 0.000 ],\n                  [ -626.188, 17.750, 75.014, -2.255, -2.187, 0.000 ]\n                ],\n                \"stopMessage\": \"Put sphere on the robot\",\n                \"velocity\": \"20.000\"\n              },\n              {\n                \"tool\": \"sphere\",\n                \"pathPoses\": [\n                  [ -426.598, -49.327, 72.000, -2.211, 2.232, 0.000 ],\n                  [ -426.598, -49.327, 27.000, -2.211, 2.232, 0.000 ],\n                  [ -426.598, -49.327, 14.500, -2.211, 2.232, 0.000 ],                 \n                  [ -425.752, 41.608, 75.000, -2.211, 2.232, 0.000 ]\n                ],\n                \"stopMessage\": \"\",\n                \"velocity\": \"20.000\"\n              }\n            ]\n          }\n        ]\n      }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:1026/v2/entities?options=keyValues",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"entities"
+					],
+					"query": [
+						{
+							"key": "options",
+							"value": "keyValues"
+						}
+					]
+				},
+				"description": "The rate of change of the **Motion Sensor** is driven by events in the real-world. We need to receive\nevery event to be able to aggregate the results.\n\nThis is done by making a POST request to the `/v2/subscription` endpoint of the Orion Context Broker.\n\n* The `fiware-service` and `fiware-servicepath` headers are used to filter the subscription to only listen to measurements from the attached IoT Sensors\n* The `idPattern` in the request body ensures that **Quantum Leap** will be informed of all **Motion Sensor** data changes.\n* The notification `url` must match the exposed port.\n\nThe `metadata` attribute ensures that the `time_index` column within the Crate-DB database will match the data found within the **Orion Context Broker** rather than using the creation time of the record within the Crate-DB itself."
+			},
+			"response": []
+		},
+		{
+			"name": "Post Program Definitions 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "fiware-service",
+						"value": "production_data",
+						"disabled": true
+					},
+					{
+						"key": "fiware-servicepath",
+						"value": "/",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n      \"id\": \"2fd1d41b-7437-4479-8498-a41e4dff3ccf\",\n      \"type\": \"laminationDefinition\",\n      \"partId\": \"flat_surface\",\n      \"comment\": \"two layers lamination\",\n      \"robot\": \"Elfin5\",\n      \"estimatedExecutionTime\": \"65.000\",\n      \"programInput\": {\n        \"partId\": \"mixed_geometry\",\n        \"comment\": \"two layers lamination\",\n        \"robot\": \"Elfin5\",\n        \"home\": [ 0.000, -0.053, -1.610, 0.000, -1.584, 0.000 ],\n        \"robotPose\": [ 0.000, 0.000, 0.000, 0.000, 0.000, 0.000 ],\n        \"piecePose\": [ 0.000, 0.000, 0.000, 0.000, 1.571, 0.000 ],\n        \"tools\": [          \n          {\n            \"name\": \"roller\",\n            \"tcp\": [ -26.597, 59.309, 236.000, -0.008, 0.005, -1.149 ]\n          },\n          {\n            \"name\": \"sphere\",\n            \"tcp\": [ -24.551, 54.747, 236.000, 0.000, 0.000, 0.422 ]\n          }\n        ],\n        \"layers\": [\n          {\n            \"layerNumber\": 1,\n            \"trajectories\": [\n              {\n                \"tool\": \"sphere\",\n                \"pathPoses\": [\n                  [ -442.624, 87.069, 74.161, 2.790, -0.126, -0.034 ],\n                  [ -444.369, 71.777, 31.874, 2.790, -0.126, -0.034 ],                 \n                  [ -626.188, 17.750, 17.514, -2.255, -2.187, 0.000 ],\n                  [ -626.188, 17.750, 30.014, -2.255, -2.187, 0.000 ],\n                  [ -626.188, 17.750, 75.014, -2.255, -2.187, 0.000 ]\n                ],\n                \"stopMessage\": \"Put sphere on the robot\",\n                \"velocity\": \"20.000\"\n              },\n              {\n                \"tool\": \"sphere\",\n                \"pathPoses\": [\n                  [ -426.598, -49.327, 72.000, -2.211, 2.232, 0.000 ],\n                  [ -426.598, -49.327, 27.000, -2.211, 2.232, 0.000 ],\n                  [ -426.598, -49.327, 14.500, -2.211, 2.232, 0.000 ],                 \n                  [ -425.752, 41.608, 75.000, -2.211, 2.232, 0.000 ]\n                ],\n                \"stopMessage\": \"\",\n                \"velocity\": \"20.000\"\n              }\n            ]\n          }\n        ]\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:1026/v2/entities?options=keyValues",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"entities"
+					],
+					"query": [
+						{
+							"key": "options",
+							"value": "keyValues"
+						}
+					]
+				},
+				"description": "The rate of change of the **Motion Sensor** is driven by events in the real-world. We need to receive\nevery event to be able to aggregate the results.\n\nThis is done by making a POST request to the `/v2/subscription` endpoint of the Orion Context Broker.\n\n* The `fiware-service` and `fiware-servicepath` headers are used to filter the subscription to only listen to measurements from the attached IoT Sensors\n* The `idPattern` in the request body ensures that **Quantum Leap** will be informed of all **Motion Sensor** data changes.\n* The notification `url` must match the exposed port.\n\nThe `metadata` attribute ensures that the `time_index` column within the Crate-DB database will match the data found within the **Orion Context Broker** rather than using the creation time of the record within the Crate-DB itself."
+			},
+			"response": []
+		},
+		{
+			"name": "Post Program Definitions  3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "fiware-service",
+						"value": "production_data",
+						"disabled": true
+					},
+					{
+						"key": "fiware-servicepath",
+						"value": "/",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"id\": \"3fd1d41b-7437-4479-8498-a41e4dff3ccf\",\n      \"type\": \"laminationDefinition\",\n      \"partId\": \"car_bumber_fhs2\",\n      \"comment\": \"laminatinon glasss fiber\",\n      \"robot\": \"Elfin10\",\n      \"estimatedExecutionTime\": \"65.000\",\n      \"programInput\": {\n        \"partId\": \"car_bumber_fhs2\",\n        \"comment\": \"laminatinon glasss fiber\",\n        \"robot\": \"Elfin5\",\n        \"home\": [ 0.000, -0.053, -1.610, 0.000, -1.584, 0.000 ],\n        \"robotPose\": [ 0.000, 0.000, 0.000, 0.000, 0.000, 0.000 ],\n        \"piecePose\": [ 0.000, 0.000, 0.000, 0.000, 1.571, 0.000 ],\n        \"tools\": [          \n          {\n            \"name\": \"roller\",\n            \"tcp\": [ -26.597, 59.309, 236.000, -0.008, 0.005, -1.149 ]\n          },\n          {\n            \"name\": \"sphere\",\n            \"tcp\": [ -24.551, 54.747, 236.000, 0.000, 0.000, 0.422 ]\n          }\n        ],\n        \"layers\": [\n          {\n            \"layerNumber\": 1,\n            \"trajectories\": [\n              {\n                \"tool\": \"sphere\",\n                \"pathPoses\": [\n                  [ -442.624, 87.069, 74.161, 2.790, -0.126, -0.034 ],\n                  [ -444.369, 71.777, 31.874, 2.790, -0.126, -0.034 ],                 \n                  [ -626.188, 17.750, 17.514, -2.255, -2.187, 0.000 ],\n                  [ -626.188, 17.750, 30.014, -2.255, -2.187, 0.000 ],\n                  [ -626.188, 17.750, 75.014, -2.255, -2.187, 0.000 ]\n                ],\n                \"stopMessage\": \"Put sphere on the robot\",\n                \"velocity\": \"20.000\"\n              },\n              {\n                \"tool\": \"sphere\",\n                \"pathPoses\": [\n                  [ -426.598, -49.327, 72.000, -2.211, 2.232, 0.000 ],\n                  [ -426.598, -49.327, 27.000, -2.211, 2.232, 0.000 ],\n                  [ -426.598, -49.327, 14.500, -2.211, 2.232, 0.000 ],                 \n                  [ -425.752, 41.608, 75.000, -2.211, 2.232, 0.000 ]\n                ],\n                \"stopMessage\": \"\",\n                \"velocity\": \"20.000\"\n              }\n            ]\n          }\n        ]\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:1026/v2/entities?options=keyValues",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"entities"
+					],
+					"query": [
+						{
+							"key": "options",
+							"value": "keyValues"
+						}
+					]
+				},
+				"description": "The rate of change of the **Motion Sensor** is driven by events in the real-world. We need to receive\nevery event to be able to aggregate the results.\n\nThis is done by making a POST request to the `/v2/subscription` endpoint of the Orion Context Broker.\n\n* The `fiware-service` and `fiware-servicepath` headers are used to filter the subscription to only listen to measurements from the attached IoT Sensors\n* The `idPattern` in the request body ensures that **Quantum Leap** will be informed of all **Motion Sensor** data changes.\n* The notification `url` must match the exposed port.\n\nThe `metadata` attribute ensures that the `time_index` column within the Crate-DB database will match the data found within the **Orion Context Broker** rather than using the creation time of the record within the Crate-DB itself."
+			},
+			"response": []
+		},
+		{
+			"name": "Post Program Definitions 4",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "fiware-service",
+						"value": "production_data",
+						"disabled": true
+					},
+					{
+						"key": "fiware-servicepath",
+						"value": "/",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"id\": \"4fd1d41b-7437-4479-8498-a41e4dff3ccf\",\n      \"type\": \"laminationDefinition\",\n      \"partId\": \"car_bumber_fhs2\",\n      \"comment\": \"high priority CF\",\n      \"robot\": \"Elfin5\",\n      \"estimatedExecutionTime\": \"65.000\",\n      \"programInput\": {\n        \"partId\": \"car_bumber_fhs2\",\n        \"comment\": \"high priority CF\",\n        \"robot\": \"Elfin5\",\n        \"home\": [ 0.000, -0.053, -1.610, 0.000, -1.584, 0.000 ],\n        \"robotPose\": [ 0.000, 0.000, 0.000, 0.000, 0.000, 0.000 ],\n        \"piecePose\": [ 0.000, 0.000, 0.000, 0.000, 1.571, 0.000 ],\n        \"tools\": [          \n          {\n            \"name\": \"roller\",\n            \"tcp\": [ -26.597, 59.309, 236.000, -0.008, 0.005, -1.149 ]\n          },\n          {\n            \"name\": \"sphere\",\n            \"tcp\": [ -24.551, 54.747, 236.000, 0.000, 0.000, 0.422 ]\n          }\n        ],\n        \"layers\": [\n          {\n            \"layerNumber\": 1,\n            \"trajectories\": [\n              {\n                \"tool\": \"sphere\",\n                \"pathPoses\": [\n                  [ -442.624, 87.069, 74.161, 2.790, -0.126, -0.034 ],\n                  [ -444.369, 71.777, 31.874, 2.790, -0.126, -0.034 ],                 \n                  [ -626.188, 17.750, 17.514, -2.255, -2.187, 0.000 ],\n                  [ -626.188, 17.750, 30.014, -2.255, -2.187, 0.000 ],\n                  [ -626.188, 17.750, 75.014, -2.255, -2.187, 0.000 ]\n                ],\n                \"stopMessage\": \"Put sphere on the robot\",\n                \"velocity\": \"20.000\"\n              },\n              {\n                \"tool\": \"sphere\",\n                \"pathPoses\": [\n                  [ -426.598, -49.327, 72.000, -2.211, 2.232, 0.000 ],\n                  [ -426.598, -49.327, 27.000, -2.211, 2.232, 0.000 ],\n                  [ -426.598, -49.327, 14.500, -2.211, 2.232, 0.000 ],                 \n                  [ -425.752, 41.608, 75.000, -2.211, 2.232, 0.000 ]\n                ],\n                \"stopMessage\": \"\",\n                \"velocity\": \"20.000\"\n              }\n            ]\n          }\n        ]\n      }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:1026/v2/entities?options=keyValues",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"entities"
+					],
+					"query": [
+						{
+							"key": "options",
+							"value": "keyValues"
+						}
+					]
+				},
+				"description": "The rate of change of the **Motion Sensor** is driven by events in the real-world. We need to receive\nevery event to be able to aggregate the results.\n\nThis is done by making a POST request to the `/v2/subscription` endpoint of the Orion Context Broker.\n\n* The `fiware-service` and `fiware-servicepath` headers are used to filter the subscription to only listen to measurements from the attached IoT Sensors\n* The `idPattern` in the request body ensures that **Quantum Leap** will be informed of all **Motion Sensor** data changes.\n* The notification `url` must match the exposed port.\n\nThe `metadata` attribute ensures that the `time_index` column within the Crate-DB database will match the data found within the **Orion Context Broker** rather than using the creation time of the record within the Crate-DB itself."
+			},
+			"response": []
+		},
+		{
+			"name": "Post Program Definitions 5",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "fiware-service",
+						"value": "production_data",
+						"disabled": true
+					},
+					{
+						"key": "fiware-servicepath",
+						"value": "/",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"id\": \"5fd1d41b-7437-4479-8498-a41e4dff3ccf\",\n      \"type\": \"laminationDefinition\",\n      \"partId\": \"car_chasis_fhz4\",\n      \"comment\": \"polish CF\",\n      \"robot\": \"UR10\",\n      \"estimatedExecutionTime\": \"65.000\",\n      \"programInput\": {\n        \"partId\": \"car_chasis_fhz4\",\n        \"comment\": \"polish CF\",\n        \"robot\": \"Elfin5\",\n        \"home\": [ 0.000, -0.053, -1.610, 0.000, -1.584, 0.000 ],\n        \"robotPose\": [ 0.000, 0.000, 0.000, 0.000, 0.000, 0.000 ],\n        \"piecePose\": [ 0.000, 0.000, 0.000, 0.000, 1.571, 0.000 ],\n        \"tools\": [          \n          {\n            \"name\": \"roller\",\n            \"tcp\": [ -26.597, 59.309, 236.000, -0.008, 0.005, -1.149 ]\n          },\n          {\n            \"name\": \"sphere\",\n            \"tcp\": [ -24.551, 54.747, 236.000, 0.000, 0.000, 0.422 ]\n          }\n        ],\n        \"layers\": [\n          {\n            \"layerNumber\": 1,\n            \"trajectories\": [\n              {\n                \"tool\": \"sphere\",\n                \"pathPoses\": [\n                  [ -442.624, 87.069, 74.161, 2.790, -0.126, -0.034 ],\n                  [ -444.369, 71.777, 31.874, 2.790, -0.126, -0.034 ],                 \n                  [ -626.188, 17.750, 17.514, -2.255, -2.187, 0.000 ],\n                  [ -626.188, 17.750, 30.014, -2.255, -2.187, 0.000 ],\n                  [ -626.188, 17.750, 75.014, -2.255, -2.187, 0.000 ]\n                ],\n                \"stopMessage\": \"Put sphere on the robot\",\n                \"velocity\": \"20.000\"\n              },\n              {\n                \"tool\": \"sphere\",\n                \"pathPoses\": [\n                  [ -426.598, -49.327, 72.000, -2.211, 2.232, 0.000 ],\n                  [ -426.598, -49.327, 27.000, -2.211, 2.232, 0.000 ],\n                  [ -426.598, -49.327, 14.500, -2.211, 2.232, 0.000 ],                 \n                  [ -425.752, 41.608, 75.000, -2.211, 2.232, 0.000 ]\n                ],\n                \"stopMessage\": \"\",\n                \"velocity\": \"20.000\"\n              }\n            ]\n          }\n        ]\n      }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:1026/v2/entities?options=keyValues",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"entities"
+					],
+					"query": [
+						{
+							"key": "options",
+							"value": "keyValues"
+						}
+					]
+				},
+				"description": "The rate of change of the **Motion Sensor** is driven by events in the real-world. We need to receive\nevery event to be able to aggregate the results.\n\nThis is done by making a POST request to the `/v2/subscription` endpoint of the Orion Context Broker.\n\n* The `fiware-service` and `fiware-servicepath` headers are used to filter the subscription to only listen to measurements from the attached IoT Sensors\n* The `idPattern` in the request body ensures that **Quantum Leap** will be informed of all **Motion Sensor** data changes.\n* The notification `url` must match the exposed port.\n\nThe `metadata` attribute ensures that the `time_index` column within the Crate-DB database will match the data found within the **Orion Context Broker** rather than using the creation time of the record within the Crate-DB itself."
+			},
+			"response": []
+		},
+		{
+			"name": "Post Program Definitions 6",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "fiware-service",
+						"value": "production_data",
+						"disabled": true
+					},
+					{
+						"key": "fiware-servicepath",
+						"value": "/",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"id\": \"6fd1d41b-7437-4479-8498-a41e4dff3ccf\",\n      \"type\": \"laminationDefinition\",\n      \"partId\": \"ext_race_lhz3\",\n      \"comment\": \"polish of glass fiber\",\n      \"robot\": \"UR10\",\n      \"estimatedExecutionTime\": \"65.000\",\n      \"programInput\": {\n        \"partId\": \"mixed_geometry\",\n        \"comment\": \"polish of glass fiber\",\n        \"robot\": \"Elfin5\",\n        \"home\": [ 0.000, -0.053, -1.610, 0.000, -1.584, 0.000 ],\n        \"robotPose\": [ 0.000, 0.000, 0.000, 0.000, 0.000, 0.000 ],\n        \"piecePose\": [ 0.000, 0.000, 0.000, 0.000, 1.571, 0.000 ],\n        \"tools\": [          \n          {\n            \"name\": \"roller\",\n            \"tcp\": [ -26.597, 59.309, 236.000, -0.008, 0.005, -1.149 ]\n          },\n          {\n            \"name\": \"sphere\",\n            \"tcp\": [ -24.551, 54.747, 236.000, 0.000, 0.000, 0.422 ]\n          }\n        ],\n        \"layers\": [\n          {\n            \"layerNumber\": 1,\n            \"trajectories\": [\n              {\n                \"tool\": \"sphere\",\n                \"pathPoses\": [\n                  [ -442.624, 87.069, 74.161, 2.790, -0.126, -0.034 ],\n                  [ -444.369, 71.777, 31.874, 2.790, -0.126, -0.034 ],                 \n                  [ -626.188, 17.750, 17.514, -2.255, -2.187, 0.000 ],\n                  [ -626.188, 17.750, 30.014, -2.255, -2.187, 0.000 ],\n                  [ -626.188, 17.750, 75.014, -2.255, -2.187, 0.000 ]\n                ],\n                \"stopMessage\": \"Put sphere on the robot\",\n                \"velocity\": \"20.000\"\n              },\n              {\n                \"tool\": \"sphere\",\n                \"pathPoses\": [\n                  [ -426.598, -49.327, 72.000, -2.211, 2.232, 0.000 ],\n                  [ -426.598, -49.327, 27.000, -2.211, 2.232, 0.000 ],\n                  [ -426.598, -49.327, 14.500, -2.211, 2.232, 0.000 ],                 \n                  [ -425.752, 41.608, 75.000, -2.211, 2.232, 0.000 ]\n                ],\n                \"stopMessage\": \"\",\n                \"velocity\": \"20.000\"\n              }\n            ]\n          }\n        ]\n      }\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:1026/v2/entities?options=keyValues",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"entities"
+					],
+					"query": [
+						{
+							"key": "options",
+							"value": "keyValues"
+						}
+					]
+				},
+				"description": "The rate of change of the **Motion Sensor** is driven by events in the real-world. We need to receive\nevery event to be able to aggregate the results.\n\nThis is done by making a POST request to the `/v2/subscription` endpoint of the Orion Context Broker.\n\n* The `fiware-service` and `fiware-servicepath` headers are used to filter the subscription to only listen to measurements from the attached IoT Sensors\n* The `idPattern` in the request body ensures that **Quantum Leap** will be informed of all **Motion Sensor** data changes.\n* The notification `url` must match the exposed port.\n\nThe `metadata` attribute ensures that the `time_index` column within the Crate-DB database will match the data found within the **Orion Context Broker** rather than using the creation time of the record within the Crate-DB itself."
+			},
+			"response": []
+		}
+	]
+}
